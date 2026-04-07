@@ -1,7 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BingoCardController;
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('bingo-cards.index');
 });
+
+Route::resource('bingo-cards', BingoCardController::class);
