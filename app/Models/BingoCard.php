@@ -7,6 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class BingoCard extends Model
 {
-    /** @use HasFactory<\Database\Factories\BingoCardFactory> */
     use HasFactory;
+
+    protected $fillable = [
+        'title',
+        'description',
+        'numbers',
+        'game_mode'
+    ];
+
+    protected $casts = [
+        'numbers' => 'array'
+    ];
 }
